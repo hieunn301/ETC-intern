@@ -1,7 +1,5 @@
 package oop.workspace;
 
-import javafx.concurrent.Worker;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +11,7 @@ public class Main {
         ManagerUser managerUser = new ManagerUser();
         ManagerProject managerProject = new ManagerProject();
         while (true){
-            System.out.println("Application Manager User");
+            System.out.println("Application Manager User/Project");
             System.out.println("Enter 1: To manage user");
             System.out.println("Enter 2: To manage project");
             System.out.println("Enter 3: To exit");
@@ -61,12 +59,14 @@ public class Main {
                             managerUser.showListInfoUser();
                             break;
                         }
+
                         default:
                             System.out.println("Invalid");
                             break;
                     }
                     break;
                 }
+
                 case "2": {
                     System.out.println("Enter a: to add Project");
                     System.out.println("Enter b: to search by Project name");
@@ -117,18 +117,20 @@ public class Main {
                             managerProject.showListInfoProject();
                             break;
                         }
+
                         default:
                             System.out.println("Invalid");
                             break;
                     }
                     break;
                 }
+
                 case "3": {
                     return;
                 }
+
                 default:
                     System.out.println("Invalid");
-                    continue;
             }
         }
     }
