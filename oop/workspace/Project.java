@@ -77,9 +77,7 @@ public class Project {
         this.status = status;
     }
 
-    public String getActivity() {
-        return activity;
-    }
+    public String getActivity() { return activity; }
 
     public void setActivity(String activity) {
         this.activity = activity;
@@ -96,14 +94,14 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "id=" + id + '\n' +
-                ", nameProject='" + nameProject + '\n' +
-                ", timeStart=" + timeStart + '\n' +
-                ", timeEnd=" + timeEnd + '\n' +
-                ", description='" + description + '\n' +
-                ", status='" + status + '\n' +
-                ", activity='" + activity + '\n' +
-                ", userId=" + userId +
-                '}';
+                " id= " + id + '\n' +
+                " nameProject= " + nameProject + '\n' +
+                " timeStart= " + timeStart + '\n' +
+                " timeEnd= " + timeEnd + '\n' +
+                " description= " + description + '\n' +
+                " status= " + status + '\n' +
+                " activity= " + activity + '\n' +
+                " userId= " + userId +
+                " }";
     }
 }

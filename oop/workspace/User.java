@@ -28,13 +28,9 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name; }
 
     public int getAge() {
         return age;
@@ -71,12 +67,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id + '\n' +
-                ", name='" + name + '\n' +
-                ", age=" + age + '\n' +
-                ", gender='" + gender + '\n' +
-                ", address='" + address + '\n' +
-                ", permission='" + permission +
-                '}';
+                ", id= " + id + '\n' +
+                ", name= " + name + '\n' +
+                ", age= " + age + '\n' +
+                ", gender= " + gender + '\n' +
+                ", address= " + address + '\n' +
+                ", permission= " + permission +
+                " }";
     }
 }

@@ -28,10 +28,12 @@ public class Main {
                             int id = scanner.nextInt();
 
                             System.out.print("Enter name: ");
+                            scanner.nextLine();
                             String name = scanner.nextLine();
 
                             System.out.print("Enter age:");
                             int age = scanner.nextInt();
+                            scanner.nextLine();
 
                             System.out.print("Enter gender: ");
                             String gender = scanner.nextLine();
@@ -78,6 +80,7 @@ public class Main {
                             int id = scanner.nextInt();
 
                             System.out.print("Enter nameProject: ");
+                            scanner.nextLine();
                             String nameProject = scanner.nextLine();
 
                             System.out.print("Enter timeStart: ");
