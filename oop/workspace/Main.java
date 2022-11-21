@@ -132,10 +132,21 @@ public class Main {
 //
 //
 //        1. Quản lý user:
-//        a. User   - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
-//                  - Phương thức: thêm, sửa, xóa, xem chi tiết user, list công việc.
 
+//        a. User   - Properties: idUser, nameUser, email, password, dateOfBirth, address, permission, idDepartment, idTeam, timeStamp
+//                  - Method: Add User, Edit User, Delete User, Read User, Add List, Edit List, Delete List, Read User
 
+//        b. Department
+//                    - Properties: idDepartment, nameDepartment, idUser, timeStamp
+//                    - Method: Add Department, Edit Department, Read Department, Delete Department
+
+//        c. Team
+//                    - Properties: idTeam, nameTeam, idUser, timeStamp
+//                    - Method: Add Team, Edit Team, Read Team, Delete Team
+
+//        mối quan hệ :   Team phụ thuộc vào Department
+//                        User phụ thuộc vào Department, Team
+//
 //        b. Admin
 //        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong
 //        - Phương thức: thêm, sửa, xóa user, xem chi tiết user
