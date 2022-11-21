@@ -1,16 +1,16 @@
 package oop.workspace;
 
 public class User {
-    private int id;
-    private String name;
+    private int idUser;
+    private String nameUser;
     private int age;
     private String gender;
     private String address;
     private String permission;
 
-    public User(int id, String name, int age, String gender, String address, String permission) {
-        this.id = id;
-        this.name = name;
+    public User(int idUser, String nameUser, int age, String gender, String address, String permission) {
+        this.idUser = idUser;
+        this.nameUser = nameUser;
         this.age = age;
         this.gender = gender;
         this.address = address;
@@ -20,17 +20,21 @@ public class User {
     public User() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
-    public String getName() {return name; }
+    public String getNameUser() {
+        return nameUser;
+    }
 
-    public void setName(String name) {this.name = name; }
+    public void setNameUser(String nameUser) {
+        this.nameUser = nameUser;
+    }
 
     public int getAge() {
         return age;
@@ -67,12 +71,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                ", id= " + id + '\n' +
-                ", name= " + name + '\n' +
-                ", age= " + age + '\n' +
-                ", gender= " + gender + '\n' +
-                ", address= " + address + '\n' +
-                ", permission= " + permission +
-                " }";
+                "idUser=" + idUser +
+                ", nameUser='" + nameUser + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
+                ", permission='" + permission + '\'' +
+                '}';
     }
 }

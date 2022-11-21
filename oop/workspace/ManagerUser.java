@@ -13,6 +13,11 @@ public class ManagerUser {
     public void addUser(User user) {
     }
 
+    public void editUser(int idUser) {
+    }
+    public void removeUser(int idUser) {
+    }
+
     public List<User> searchUserByName(String name) {
         return null;
     }

@@ -83,27 +83,13 @@ public class Main {
                             scanner.nextLine();
                             String nameProject = scanner.nextLine();
 
-                            System.out.print("Enter timeStart: ");
-                            String timeStartString = scanner.nextLine();
-                            Date timeStart = new SimpleDateFormat("dd/MM/yyyy").parse(timeStartString);
-
-                            System.out.print("Enter timeEnd: ");
-                            String timeEndString = scanner.nextLine();
-                            Date timeEnd = new SimpleDateFormat("dd/MM/yyyy").parse(timeEndString);
-
                             System.out.print("Enter description:");
-                            String description = scanner.nextLine();
-
-                            System.out.print("Enter status: ");
-                            String status = scanner.nextLine();
-
-                            System.out.print("Enter activity: ");
-                            String activity = scanner.nextLine();
+                            String descriptionProject = scanner.nextLine();
 
                             System.out.print("Enter userId: ");
                             int userId = scanner.nextInt();
 
-                            Project project = new Project(id, nameProject, timeStart, timeEnd, description, status, activity, userId);
+                            Project project = new Project(id, nameProject, descriptionProject, userId);
                             managerProject.addProject(project);
                             System.out.println(project.toString());
                             break;
@@ -138,3 +124,44 @@ public class Main {
         }
     }
 }
+
+//1 workspaces(properties: name, description, change private to public)(method: CRUD, invite to workspace)
+//        1.1 boards/project(method: CRUD, sort by, search, share)
+//        1.1.1 list(properties: )(method: CRUD)
+//        1.1.1.1 card/task(properties: description, timeStart, timeEnd)(method: CRUD, members, share, comment, labels(CRUD))
+//
+//
+//        1. Quản lý user:
+//        a. User   - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
+//                  - Phương thức: thêm, sửa, xóa, xem chi tiết user, list công việc.
+
+
+//        b. Admin
+//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong
+//        - Phương thức: thêm, sửa, xóa user, xem chi tiết user
+//        c. Trưởng phòng
+//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong
+//        - Phương thức: thêm, sửa, xóa user, xem chi tiết user, phê duyệt các yêu cầu từ nhân viên.
+//        d. Leader quản lý 1 team
+//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
+//        - Phương thức: xem chi tiết user, đăng ký
+//        e. Nhân viên
+//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
+//        - Phương thức: xem chi tiết user, đăng ký
+//
+//
+//        Quan hệ giữa các đối tượng: 	- nhân viên, lead, trưởng phòng, admin kế thừa từ user
+//        - nhân viên và trưởng phòng là quan hệ kết hợp(Association)
+//
+//        2. Quản lý Project:
+//        a. Project (ví dụ làm dự án về giải pháp giáo dục)
+//        - Thuộc tính: idProject, nameProject, description, idUser
+//        - Phương thức: thêm, sửa xóa, xem chi tiết project, mời người vào dự án
+//        b. List(các bước để hoàn thành dự án)
+//        - Thuộc tính: idList, nameList
+//        - Phương thức: thêm, sửa, xóa, xem chi tiết danh sách công việc, sắp xếp, tìm kiếm
+//        c. Task(danh sách công việc của mỗi bước làm dự án )
+//        - Thuộc tính: idTask, nameTask, description, timeStart, timeEnd
+//        - Phương thức: thêm, sửa xóa, xem chi tiết task, thêm người vào task, bình luận, thêm liên kết.
+//
+//        Quan hệ giữa các đối tượng
