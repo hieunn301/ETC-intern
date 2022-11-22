@@ -132,47 +132,34 @@ public class Main {
 //
 //
 //        1. Quản lý user:
-
+//
 //        a. User   - Properties: idUser, nameUser, email, password, dateOfBirth, address, permission, idDepartment, idTeam, timeStamp
-//                  - Method: Add User, Edit User, Delete User, Read User, Add List, Edit List, Delete List, Read User
-
+//                  - Method: addUser, editUser, deleteUser, viewUser
+//
 //        b. Department
 //                    - Properties: idDepartment, nameDepartment, idUser, timeStamp
-//                    - Method: Add Department, Edit Department, Read Department, Delete Department
-
+//                    - Method: addDepartment, editDepartment, viewDepartment, deleteDepartment, searchDepartment
+//
 //        c. Team
 //                    - Properties: idTeam, nameTeam, idUser, timeStamp
-//                    - Method: Add Team, Edit Team, Read Team, Delete Team
-
+//                    - Method: addTeam, editTeam, viewTeam, deleteTeam
+//
 //        mối quan hệ :   Team phụ thuộc vào Department
 //                        User phụ thuộc vào Department, Team
 //
-//        b. Admin
-//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong
-//        - Phương thức: thêm, sửa, xóa user, xem chi tiết user
-//        c. Trưởng phòng
-//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong
-//        - Phương thức: thêm, sửa, xóa user, xem chi tiết user, phê duyệt các yêu cầu từ nhân viên.
-//        d. Leader quản lý 1 team
-//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
-//        - Phương thức: xem chi tiết user, đăng ký
-//        e. Nhân viên
-//        - Thuộc tính: idUser, name, email, password, age, address, permission, idPhong, idTeam
-//        - Phương thức: xem chi tiết user, đăng ký
-//
-//
-//        Quan hệ giữa các đối tượng: 	- nhân viên, lead, trưởng phòng, admin kế thừa từ user
-//        - nhân viên và trưởng phòng là quan hệ kết hợp(Association)
-//
 //        2. Quản lý Project:
-//        a. Project (ví dụ làm dự án về giải pháp giáo dục)
-//        - Thuộc tính: idProject, nameProject, description, idUser
-//        - Phương thức: thêm, sửa xóa, xem chi tiết project, mời người vào dự án
-//        b. List(các bước để hoàn thành dự án)
-//        - Thuộc tính: idList, nameList
-//        - Phương thức: thêm, sửa, xóa, xem chi tiết danh sách công việc, sắp xếp, tìm kiếm
-//        c. Task(danh sách công việc của mỗi bước làm dự án )
-//        - Thuộc tính: idTask, nameTask, description, timeStart, timeEnd
-//        - Phương thức: thêm, sửa xóa, xem chi tiết task, thêm người vào task, bình luận, thêm liên kết.
+//
+//        a. Project
+//                  - Properties: idProject, nameProject, description, idUser, timeStamp
+//                  - Method: addProject, editProject, viewProject, deleteProject, inviteToProject
+//
+//        b. List
+//                  - Properties: idList, nameList, timeStamp
+//                  - Method: addList, editList, deleteList, viewList, sortBy, searchList
+//
+//        c. Task
+//                  - Properties: idTask, nameTask, description, timeStamp
+//                  - Method: addTask, editTask, viewTask, inviteToTask, comment
 //
 //        Quan hệ giữa các đối tượng
+
