@@ -1,20 +1,28 @@
 package oop.workspace;
 
+import java.util.Date;
+
 public class User {
     private int idUser;
     private String nameUser;
-    private int age;
-    private String gender;
+    private String email;
+    private String password;
+    private Date dateOfBirth;
     private String address;
     private String permission;
+    private Date createdAt;
+    private Date updatedAt;
 
-    public User(int idUser, String nameUser, int age, String gender, String address, String permission) {
+    public User(int idUser, String nameUser, String email, String password, Date dateOfBirth, String address, String permission, Date createdAt, Date updatedAt) {
         this.idUser = idUser;
         this.nameUser = nameUser;
-        this.age = age;
-        this.gender = gender;
+        this.email = email;
+        this.password = password;
+        this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.permission = permission;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public User() {
@@ -36,20 +44,28 @@ public class User {
         this.nameUser = nameUser;
     }
 
-    public int getAge() {
-        return age;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getGender() {
-        return gender;
+    public String getPassword() {
+        return password;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getAddress() {
@@ -68,15 +84,19 @@ public class User {
         this.permission = permission;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "idUser=" + idUser +
-                ", nameUser='" + nameUser + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", address='" + address + '\'' +
-                ", permission='" + permission + '\'' +
-                '}';
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

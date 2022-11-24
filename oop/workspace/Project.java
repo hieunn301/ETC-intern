@@ -1,60 +1,50 @@
 package oop.workspace;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Project {
-    private int id;
+    private int idProject;
     private String nameProject;
     private String descriptionProject;
-    private int userId;
+    private List<User> idUser = new ArrayList<User>();
+    private Date createdAt;
+    private Date updatedAt;
 
-    public Project(int id, String nameProject, String descriptionProject, int userId) {
-        this.id = id;
+    public Project(int idProject, String nameProject, String descriptionProject, List<User> idUser, Date creatdAt, Date updatedAt) {
+        this.idProject = idProject;
         this.nameProject = nameProject;
         this.descriptionProject = descriptionProject;
-        this.userId = userId;
+        this.idUser = idUser;
+        this.createdAt = creatdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Project() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public int getIdProject() {
+        return idProject;
     }
 
     public String getNameProject() {
         return nameProject;
     }
 
-    public void setNameProject(String nameProject) {
-        this.nameProject = nameProject;
-    }
-
     public String getDescriptionProject() {
         return descriptionProject;
     }
 
-    public void setDescriptionProject(String descriptionProject) {
-        this.descriptionProject = descriptionProject;
+    public List<User> getIdUser() {
+        return idUser;
     }
 
-    public int getUserId() {
-        return userId;
+    public Date getCreatdAt() {
+        return createdAt;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    @Override
-    public String toString() {
-        return "Project{" +
-                "id=" + id +
-                ", nameProject='" + nameProject + '\'' +
-                ", descriptionProject='" + descriptionProject + '\'' +
-                ", userId=" + userId +
-                '}';
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 }

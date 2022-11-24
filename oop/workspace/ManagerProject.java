@@ -7,7 +7,6 @@ public class ManagerProject {
 
     public ManagerProject() {
     }
-
     public void addProject(Project projects) {
     }
     public void editProject(int idProjects) {

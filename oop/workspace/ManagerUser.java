@@ -1,8 +1,6 @@
 package oop.workspace;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ManagerUser {
     private List<User> users;
@@ -18,11 +16,19 @@ public class ManagerUser {
     public void removeUser(int idUser) {
     }
 
-    public List<User> searchUserByName(String name) {
+    public List<User> viewUser(){
         return null;
     }
 
-    public List<User> showListInfoUser(){
+    public List<User> searchUser(String name) {
+        return null;
+    }
+
+    public List<User> sortByName(String name){
+        return null;
+    }
+
+    public List<User> sortByEmail(String email){
         return null;
     }
 }
