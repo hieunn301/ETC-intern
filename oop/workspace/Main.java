@@ -1,10 +1,66 @@
 package oop.workspace;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
+        Scanner scanner = new Scanner(System.in);
+        ManagerUser managerUser = new ManagerUser();
+        ManagerProject managerProject = new ManagerProject();
+            while (true){
+                    System.out.println("Application Manager User/Project");
+                    System.out.println("Enter 1: To manage user");
+                    String line = scanner.nextLine();
+                    switch (line){
+                    case "1": {
+                    System.out.println("Enter a: to add User");
+                    System.out.println("Enter b: to search by User name");
+                    System.out.println("Enter c: to show list User");
+                    String type = scanner.nextLine();
+                    switch (type) {
+                    case "a": {
+                        System.out.print("Enter id: ");
+                        int idUser = scanner.nextInt();
 
+                        System.out.print("Enter name: ");
+                        scanner.nextLine();
+                        String nameUser = scanner.nextLine();
+
+                        System.out.print("Enter email: ");
+                        String email = scanner.nextLine();
+
+                        System.out.print("Enter password: ");
+                        String password = scanner.nextLine();
+
+                        System.out.print("Enter dateOfBirth: ");
+                        String dates = scanner.nextLine();
+                        SimpleDateFormat dateOfBirth = new SimpleDateFormat("dd/MM/yyyy");
+                        Date date = dateOfBirth.parse(dates);
+
+
+                        System.out.print("Enter address: ");
+                        String address = scanner.nextLine();
+
+                        System.out.print("Enter permission: ");
+                        String permission = scanner.nextLine();
+
+                        System.out.print("Enter createdAt: ");
+                        String createdAt = scanner.nextLine();
+
+                        System.out.print("Enter updatedAt: ");
+                        String updatedAt = scanner.nextLine();
+
+                        User user = new User(idUser, nameUser, email, password, date, address, permission, "Thu Dec 31 00:00:00 IST 1998", "Thu Dec 31 00:00:00 IST 2000");
+                        managerUser.addUser(user);
+                        System.out.println(user.toString());
+                        break;
+                        }
+                    }
+            }
+        }
+    }
     }
 }
 

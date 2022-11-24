@@ -10,10 +10,10 @@ public class User {
     private Date dateOfBirth;
     private String address;
     private String permission;
-    private Date createdAt;
-    private Date updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
-    public User(int idUser, String nameUser, String email, String password, Date dateOfBirth, String address, String permission, Date createdAt, Date updatedAt) {
+    public User(int idUser, String nameUser, String email, String password, Date dateOfBirth, String address, String permission, String createdAt, String updatedAt) {
         this.idUser = idUser;
         this.nameUser = nameUser;
         this.email = email;
@@ -23,9 +23,6 @@ public class User {
         this.permission = permission;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-    }
-
-    public User() {
     }
 
     public int getIdUser() {
@@ -84,19 +81,19 @@ public class User {
         this.permission = permission;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

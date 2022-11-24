@@ -12,16 +12,13 @@ public class Project {
     private Date createdAt;
     private Date updatedAt;
 
-    public Project(int idProject, String nameProject, String descriptionProject, List<User> idUser, Date creatdAt, Date updatedAt) {
+    public Project(int idProject, String nameProject, String descriptionProject, List<User> idUser, Date createdAt, Date updatedAt) {
         this.idProject = idProject;
         this.nameProject = nameProject;
         this.descriptionProject = descriptionProject;
         this.idUser = idUser;
-        this.createdAt = creatdAt;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-    }
-
-    public Project() {
     }
 
     public int getIdProject() {
@@ -40,7 +37,7 @@ public class Project {
         return idUser;
     }
 
-    public Date getCreatdAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
