@@ -1,184 +1,118 @@
 package oop.workspace;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Stack;
 
-public class Main {
-    public static void main(String[] args) throws ParseException {
-        Scanner scanner = new Scanner(System.in);
-        ManagerUser managerUser = new ManagerUser();
-        ManagerProject managerProject = new ManagerProject();
-            while (true){
-                    System.out.println("Application Manager User/Project");
-                    System.out.println("Enter 1: To manage user");
-                    String line = scanner.nextLine();
-                    switch (line){
-                    case "1": {
-                    System.out.println("Enter a: to add User");
-                    System.out.println("Enter b: to search by User name");
-                    System.out.println("Enter c: to show list User");
-                    String type = scanner.nextLine();
-                    switch (type) {
-                    case "a": {
-                        System.out.print("Enter id: ");
-                        int idUser = scanner.nextInt();
+class Main {
+    static class Stack {
+        static final int MAX = 1000;
+        int top;
+        int a[] = new int[MAX]; // Maximum size of Stack
 
-                        System.out.print("Enter name: ");
-                        scanner.nextLine();
-                        String nameUser = scanner.nextLine();
+        boolean isEmpty()
+        {
+            return (top < 0);
+        }
+        Stack()
+        {
+            top = -1;
+        }
 
-                        System.out.print("Enter email: ");
-                        String email = scanner.nextLine();
+        boolean push(int x)
+        {
+            if (top >= (MAX - 1)) {
+                System.out.println("Stack Overflow");
+                return false;
+            }
+            else {
+                a[++top] = x;
+                System.out.println(x + " pushed into stack");
+                return true;
+            }
+        }
 
-                        System.out.print("Enter password: ");
-                        String password = scanner.nextLine();
+        int pop()
+        {
+            if (top < 0) {
+                System.out.println("Stack Underflow");
+                return 0;
+            }
+            else {
+                int x = a[top--];
+                return x;
+            }
+        }
 
-                        System.out.print("Enter dateOfBirth: ");
-                        String dates = scanner.nextLine();
-                        SimpleDateFormat dateOfBirth = new SimpleDateFormat("dd/MM/yyyy");
-                        Date date = dateOfBirth.parse(dates);
-
-
-                        System.out.print("Enter address: ");
-                        String address = scanner.nextLine();
-
-                        System.out.print("Enter permission: ");
-                        String permission = scanner.nextLine();
-
-                        System.out.print("Enter createdAt: ");
-                        String createdAt = scanner.nextLine();
-
-                        System.out.print("Enter updatedAt: ");
-                        String updatedAt = scanner.nextLine();
-
-                        User user = new User(idUser, nameUser, email, password, date, address, permission, "Thu Dec 31 00:00:00 IST 1998", "Thu Dec 31 00:00:00 IST 2000");
-                        managerUser.addUser(user);
-                        System.out.println(user.toString());
-                        break;
-                        }
-                    }
+        int peek()
+        {
+            if (top < 0) {
+                System.out.println("Stack Underflow");
+                return 0;
+            }
+            else {
+                int x = a[top];
+                return x;
             }
         }
     }
-    }
-}
+    public static void main(String[] args) {
+        Stack integerStack = new Stack();
+
+        integerStack.push(10);
+        integerStack.push(20);
+        integerStack.push(30);
+        System.out.println(integerStack.pop() + " Popped from stack");
 
 
 
+//        Scanner scanner = new Scanner(System.in);
 //
-//    Scanner scanner = new Scanner(System.in);
-//    ManagerUser managerUser = new ManagerUser();
-//    ManagerProject managerProject = new ManagerProject();
-//        while (true){
-//                System.out.println("Application Manager User/Project");
-//                System.out.println("Enter 1: To manage user");
-//                System.out.println("Enter 2: To manage project");
-//                System.out.println("Enter 3: To exit");
-//                String line = scanner.nextLine();
-//                switch (line){
-//                case "1": {
-//                System.out.println("Enter a: to add User");
-//                System.out.println("Enter b: to search by User name");
-//                System.out.println("Enter c: to show list User");
-//                String type = scanner.nextLine();
-//                switch (type) {
-//                case "a": {
-//                System.out.print("Enter id: ");
-//                int id = scanner.nextInt();
-//
-//                System.out.print("Enter name: ");
-//                scanner.nextLine();
-//                String name = scanner.nextLine();
-//
-//                System.out.print("Enter age:");
-//                int age = scanner.nextInt();
-//                scanner.nextLine();
-//
-//                System.out.print("Enter gender: ");
-//                String gender = scanner.nextLine();
-//
-//                System.out.print("Enter address: ");
-//                String address = scanner.nextLine();
-//
-//                System.out.print("Enter permission: ");
-//                String permission = scanner.nextLine();
-//
-//                User user = new User(id, name, age, gender, address, permission);
-//                managerUser.addUser(user);
-//                System.out.println(user.toString());
-//                break;
-//                }
-//
-//                case "b": {
-//                System.out.print("Enter name: ");
-//                String name = scanner.nextLine();
-//                managerUser.searchUserByName(name);
-//                break;
-//                }
-//
-//                case "c": {
-//                managerUser.showListInfoUser();
-//                break;
-//                }
-//
-//default:
-//        System.out.println("Invalid");
-//        break;
-//        }
-//        break;
-//        }
-//
-//        case "2": {
-//        System.out.println("Enter a: to add Project");
-//        System.out.println("Enter b: to search by Project name");
-//        System.out.println("Enter c: to show list Project");
-//        String type = scanner.nextLine();
-//        switch (type) {
-//        case "a": {
 //        System.out.print("Enter id: ");
 //        int id = scanner.nextInt();
-//
-//        System.out.print("Enter nameProject: ");
 //        scanner.nextLine();
-//        String nameProject = scanner.nextLine();
 //
-//        System.out.print("Enter description:");
-//        String descriptionProject = scanner.nextLine();
+//        System.out.print("Enter nameUser: ");
+//        String nameUser = scanner.nextLine();
 //
-//        System.out.print("Enter userId: ");
-//        int userId = scanner.nextInt();
+//        System.out.print("Enter email: ");
+//        String email = scanner.nextLine();
 //
-//        Project project = new Project(id, nameProject, descriptionProject, userId);
-//        managerProject.addProject(project);
-//        System.out.println(project.toString());
-//        break;
-//        }
+//        System.out.print("Enter password: ");
+//        String password = scanner.nextLine();
 //
-//        case "b": {
-//        System.out.print("Enter name: ");
-//        String name = scanner.nextLine();
-//        managerProject.searchProjectByName(name);
-//        break;
-//        }
+//        System.out.print("Enter dateOfBirth: ");
+//        String dateOfBirth = scanner.nextLine();
 //
-//        case "c": {
-//        managerProject.showListInfoProject();
-//        break;
-//        }
+//        System.out.print("Enter address: ");
+//        String address = scanner.nextLine();
 //
-//default:
-//        System.out.println("Invalid");
-//        break;
-//        }
-//        break;
-//        }
+//        System.out.print("Enter permission: ");
+//        String permission = scanner.nextLine();
 //
-//        case "3": {
-//        return;
-//        }
+////        System.out.print("Enter isAvailable: ");
+////        Boolean isAvailable = true;
 //
-//default:
-//        System.out.println("Invalid");
-//        }
-//        }
+//        System.out.print("Enter createdAt: ");
+//        String createdAt = scanner.nextLine();
+//
+//        System.out.print("Enter updatedAt: ");
+//        String updatedAt = scanner.nextLine();
+//
+//        System.out.print("Enter idTeam: ");
+//        int idTeam = scanner.nextInt();
+//        scanner.nextLine();
+//
+//        User user = new User( id, nameUser, email, password, dateOfBirth, address, permission, true, createdAt, updatedAt, idTeam);
+//        User.addUser(user);
+//        System.out.println(user.toString());
+//        user.getId();
+
+//            Stack integerStack = new Stack();
+//            integerStack.push(1);
+//            integerStack.push(2);
+//            integerStack.push(3);
+//            integerStack.push(4);
+//            integerStack.push(5);
+//            System.out.println(integerStack.pop());
+        }
+
+}
