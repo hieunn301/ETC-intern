@@ -1,69 +1,22 @@
 package oop.workspace;
 
-import java.util.Stack;
+import java.util.HashMap;
+import java.util.Map;
 
 class Main {
-    static class Stack {
-        static final int MAX = 1000;
-        int top;
-        int a[] = new int[MAX]; // Maximum size of Stack
-
-        boolean isEmpty()
-        {
-            return (top < 0);
-        }
-        Stack()
-        {
-            top = -1;
-        }
-
-        boolean push(int x)
-        {
-            if (top >= (MAX - 1)) {
-                System.out.println("Stack Overflow");
-                return false;
-            }
-            else {
-                a[++top] = x;
-                System.out.println(x + " pushed into stack");
-                return true;
-            }
-        }
-
-        int pop()
-        {
-            if (top < 0) {
-                System.out.println("Stack Underflow");
-                return 0;
-            }
-            else {
-                int x = a[top--];
-                return x;
-            }
-        }
-
-        int peek()
-        {
-            if (top < 0) {
-                System.out.println("Stack Underflow");
-                return 0;
-            }
-            else {
-                int x = a[top];
-                return x;
-            }
-        }
-    }
     public static void main(String[] args) {
-        Stack integerStack = new Stack();
+        Map<Integer, String> map= new HashMap<>();
+        map.put(1, "a");
+        map.put(2, "b");
+        map.put(3, "c");
+        map.put(4, "d");
+        for(Integer K: map.keySet()){
+            System.out.println(K + " " + map.get(K));
+        }
+        map.clear();
+        System.out.println(map);
 
-        integerStack.push(10);
-        integerStack.push(20);
-        integerStack.push(30);
-        System.out.println(integerStack.pop() + " Popped from stack");
-
-
-
+    }
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Enter id: ");
@@ -105,14 +58,5 @@ class Main {
 //        User.addUser(user);
 //        System.out.println(user.toString());
 //        user.getId();
+    }
 
-//            Stack integerStack = new Stack();
-//            integerStack.push(1);
-//            integerStack.push(2);
-//            integerStack.push(3);
-//            integerStack.push(4);
-//            integerStack.push(5);
-//            System.out.println(integerStack.pop());
-        }
-
-}
