@@ -2,20 +2,26 @@ package oop.workspace;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Map<Integer, String> map= new HashMap<>();
-        map.put(1, "a");
-        map.put(2, "b");
-        map.put(3, "c");
-        map.put(4, "d");
-        for(Integer K: map.keySet()){
-            System.out.println(K + " " + map.get(K));
-        }
-        map.clear();
-        System.out.println(map);
+        Stack stack = new Stack(5);
+        stack.push("hieu");
+        stack.push(1);
+        stack.push(2);
+        stack.push(143);
+        stack.push(21);
+        System.out.println(stack.size());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
 
+//        Queue queue = new Queue(5);
+//        queue.add(Integer.parseInt("ha"));
+//        queue.add(1);
+//        queue.add(3);
+//        queue.add(4);
+//        System.out.println(queue);
     }
 //        Scanner scanner = new Scanner(System.in);
 //
