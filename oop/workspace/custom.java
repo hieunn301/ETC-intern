@@ -1,158 +1,54 @@
 package oop.workspace;
 
-//class Stack<E>{
-//    int MAX = 1000;
-//    int top;
-//    int a[] = new int[MAX];
-//    boolean isEmpty(){
-//        return (top < 0);
-//    }
-////    Stack(){
-////        top = -1;
-////    }
-//    public void sayHello(){
-//        int n = 0;
-//        System.out.println("nhap gi tri max: " + n);
-//    }
-//    boolean push(int x){
-//        if (top >= (MAX - 1)) {
-//            System.out.println("Stack đầy");
-//            return false;
-//        }else {
-//            a[++top] = x;
-//            System.out.println(x + " được đẩy vào ngăn xếp");
+class Stack{
+    StackNode root;
+
+    public class StackNode {
+        public int data;
+        public StackNode next;
+
+        public StackNode(int data) { this.data = data; }
+    }
+
+    public boolean isEmpty() {
+//        if (root == null) {
 //            return true;
 //        }
-//    }
-//
-//     public int pop(){
-//        if (top < 0) {
-//            System.out.println("Stack rỗng");
-//            System.exit(-1);
-//        }else {
-//            int x = a[top--];
-//            return x;
-//        }
-//         return 0;
-//     }
-//
-//    int peek(){
-//        if (top < 0) {
-//            System.out.println("Stack rỗng");
-//            return top;
-//        }else {
-//            int x = a[top];
-//            return x;
-//        }
-//    }
-//
-//}
+//        else
+//            return false;
+        return root == null ? true : false;
 
-class Stack{
-    private Object arr[];
-    private int top;
-    private int max;
-    Stack(int size){
-        arr = new String[size];
-        max = size;
-        top = -1;
     }
-    public int size() {
-        return top + 1;
-    }
-    public boolean isEmpty() {
-        return top == -1;
-    }
-    public boolean isFull() {
-        return top == max - 1;
-    }
-    public Object push(Object x){
-        if (isFull()){
-            System.out.println("Ngăn xếp đầy");
+
+    public void push(int data) {
+        StackNode newNode = new StackNode(data);
+        if (root == null) {
+            root = newNode;
+        } else {
+            StackNode temp = root;
+            root = newNode;
+            newNode.next = temp;
         }
-        System.out.println("Thêm " + x);
-        arr[++top] = String.valueOf(x);
-        return x;
+        System.out.println(data + " duoc them vao stack");
     }
-    public Object pop(){
-        if (isEmpty()){
-            System.out.println("Ngăn xếp rỗng");
+
+    public String pop() {
+        String popped = null;
+        if (root == null) {
+            System.out.println("Stack rong");
+        } else {
+            popped = String.valueOf(root.data);
+            root = root.next;
         }
-        System.out.println("Xóa " + peek());
-        return arr[top--];
+        return popped;
     }
-    public Object peek(){
-        if (!isEmpty()) {
-            return arr[top];
-        }else {
-            System.out.println("Ngăn xếp rỗng");
+
+    public String peek() {
+        if (root == null) {
+            System.out.println("Stack rong");
             return null;
+        } else {
+            return String.valueOf(root.data);
         }
     }
 }
-
-class Queue {
-    private int[] arr;
-    private int front;
-    private int rear;
-    private int max;
-    private int count;
-    Queue(int size){
-        arr = new int[size];
-        max = size;
-        front = 0;
-        rear = -1;
-        count = 0;
-    }
-    public int remove() {
-        if (isEmpty()) {
-            System.out.println("Hàng đợi rỗng");
-            System.exit(-1);
-        }
-        int x = arr[front];
-        System.out.println("Xóa " + x);
-        front = (front + 1) % max;
-        count--;
-
-        return x;
-    }
-    public void add(int item){
-        if (isFull()){
-            System.out.println("Hàng đợi đầy");
-            System.exit(-1);
-        }
-        System.out.println("Thêm " + item);
-        rear = (rear + 1) % max;
-        arr[rear] = item;
-        count++;
-    }
-    public int peek(){
-        if (isEmpty()) {
-            System.out.println("Hàng đợi rỗng");
-            System.exit(-1);
-        }
-        return arr[front];
-    }
-    public int size() {
-        return count;
-    }
-    public boolean isEmpty() {
-        return (size() == 0);
-    }
-    public boolean isFull() {
-        return (size() == max);
-    }
-}
-//class Map{
-//    public class Entry<K, V>{
-//        private Key K;
-//        private Value V;
-//
-//        public Entry(Key k, Value v) {
-//            K = k;
-//            V = v;
-//        }
-//
-//    }
-//}
-

@@ -1,27 +1,39 @@
 package oop.workspace;
 
+import java.awt.image.ImageProducer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Stack stack = new Stack(5);
-        stack.push("hieu");
+        Stack stack = new Stack();
         stack.push(1);
+        stack.push(3);
         stack.push(2);
-        stack.push(143);
-        stack.push(21);
-        System.out.println(stack.size());
+//        System.out.println(stack.size());
         System.out.println(stack.pop());
         System.out.println(stack.peek());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.peek());
+
 
 //        Queue queue = new Queue(5);
-//        queue.add(Integer.parseInt("ha"));
-//        queue.add(1);
-//        queue.add(3);
-//        queue.add(4);
-//        System.out.println(queue);
+//        queue.add("hi");
+//        queue.add("hihi");
+//        queue.add("hihihi");
+//        queue.add("hihihihi");
+//        queue.add("h");
+//        System.out.println(queue.count());
+//        System.out.println(queue.remove());
+//        System.out.println(queue.peek());
+
+//        Map map = new Map(){
+//
+//        }
+
+
+
     }
 //        Scanner scanner = new Scanner(System.in);
 //
