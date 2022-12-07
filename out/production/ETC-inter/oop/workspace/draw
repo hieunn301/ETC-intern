@@ -187,3 +187,60 @@ class Map{
     }
 }
 
+
+
+class Map<K, V> {
+    public static class Entry<K, V> {
+        private final K key;
+        private V value;
+        private Entry<K, V> next;
+
+        public Entry(K key, V value, Entry<K, V> next){
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+        public K getKey() {return key;}
+        public V getValue() {return value;}
+        public void setValue(V value) {this.value = value;}
+        public Entry getNext() {return next;}
+        public void setNext(Entry<K, V> next) {this.next = next;}
+    }
+    private int size = 10;
+    private final Entry[] table;
+    public Map(){table = new Entry[size];}
+    private int buckets(K key){
+        if(key == null){
+            return 0;
+        }
+        return Math.abs(key.hashCode() % size);
+    }
+    public void put(K key, V value){
+        int index = buckets(key);
+        Entry<K, V> newEntry = new Entry<>(key, value, null);
+        if(table[index] == null)
+            table[index] = newEntry;
+    }
+    public void remove(K key){
+        int index = buckets(key);
+        Entry previous = null;
+        Entry entry = table[index];
+        while (entry != null){
+            if(entry.getKey().equals(key)) {
+                entry = entry.getNext();
+                table[index] = entry;
+                System.out.println("Remove key: " + key);
+                return;
+            }
+        }
+    }
+    public void display(){
+        for(int i = 0; i < size; i++){
+            if(table[i] != null){
+                Entry currentNode = table[i];
+                System.out.printf("Key is %s and value is %s %n", currentNode.getKey(), currentNode.getValue());
+            }
+        }
+    }
+}
+
