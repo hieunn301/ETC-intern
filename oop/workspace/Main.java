@@ -2,18 +2,6 @@ package oop.workspace;
 
 class Main {
     public static void main(String[] args) {
-        Map map = new Map() {
-            map.add(12, 11);
-            map.add(22, 11);
-            map.add(33, 11);
-            map.add(44, 11);
-            map.add(55, 11);
-            map.add(66, 11);
-            map.add(77, 11);
-            map.remove(77);
-            map.containsKey(77);
-            System.out.println(map);
-//        System.out.println(map);
     }
 }
 
