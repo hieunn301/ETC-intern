@@ -1,7 +1,7 @@
 package oop.workspace.customTypeData;
 
 public class customQueue {
-    private int size = 0;
+    private int size;
     private Node front, rear;
 
     @Override
@@ -31,7 +31,6 @@ public class customQueue {
         }
         rear = node;
         size++;
-        System.out.println("Add: " + data);
     }
 
     public void dequeue() {
@@ -59,8 +58,12 @@ public class customQueue {
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
-        System.out.println(queue);
+        queue.enqueue(4);
+        queue.enqueue(5);
+        queue.enqueue(6);
         queue.dequeue();
         queue.first();
+        System.out.println(queue);
+
     }
 }

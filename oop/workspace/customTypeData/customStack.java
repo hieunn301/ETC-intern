@@ -1,7 +1,7 @@
 package oop.workspace.customTypeData;
 
 public class customStack {
-    private int size = 0;
+    private int size;
     Node top = null;
 
     @Override
@@ -22,7 +22,6 @@ public class customStack {
         newNode.setNextNode(top);
         top = newNode;
         size++;
-        System.out.println("Add: " + data);
     }
     public void pop() {
         if (isEmpty()) {
@@ -42,14 +41,18 @@ public class customStack {
         }
     }
 
-
     public static void main(String[] args) {
         customStack stack = new customStack();
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        System.out.println(stack);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        stack.push(7);
         stack.pop();
         stack.peek();
+        System.out.println(stack);
+
     }
 }

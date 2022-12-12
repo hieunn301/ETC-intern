@@ -33,7 +33,7 @@ public class customMap<K, V>{
     }
     public void Map(){
     }
-    public boolean checkKey(K key) {
+    public boolean checkKeyKhongTrung(K key) {
         boolean result = true;
         for (Node<K, V> currentNode = node; currentNode != null; currentNode = currentNode.prev) {
             if (key == currentNode.getKey()) {
@@ -43,11 +43,13 @@ public class customMap<K, V>{
         return result;
     }
     void add(K key, V value){
-        if(checkKey(key)){
+        if(checkKeyKhongTrung(key)){
             node = new Node(key, value, node);
+        }else{
+            System.out.println("Key " + key + " và value " + value + " không được thêm");
         }
     }
-    Object get(K key){
+    V get(K key){
         for (Node<K, V> currentNode = node; currentNode != null; currentNode = currentNode.prev){
             if(currentNode.key == key){
                 return currentNode.value;
@@ -58,17 +60,22 @@ public class customMap<K, V>{
         }
         return null;
     }
-    Object remove(K key){
+    V remove(K key){
         for (Node<K, V> currentNode = node; currentNode != null; currentNode = currentNode.prev){
+
             if(currentNode.prev != null && currentNode.prev.key == key){
-                Node<K, V> removeNode = currentNode.prev.prev;
-                currentNode.prev = removeNode;
-                return removeNode;
+                V remove = currentNode.prev.value;
+                Node<K, V> prevNode = currentNode.prev.prev;
+                currentNode.prev = prevNode;
+                System.out.println("rm: " + remove);
+                return remove;
             }
             if(currentNode.key == key){
-                Node<K, V> removeNode = currentNode.prev;
-                node = removeNode;
-                return removeNode != null ? removeNode : null;
+                V remove = currentNode.value;
+                Node<K, V> prevNode = currentNode.prev;
+                node = prevNode;
+                System.out.println("rm: " + remove);
+                return remove;
             }
         }
         System.out.println("Key = " + key + " không có trong Map");
@@ -78,10 +85,14 @@ public class customMap<K, V>{
     public static void main(String[] args) {
         customMap map = new customMap();
         map.add(1, 11);
+        map.add(1, 22);
         map.add(2, 22);
         map.add(3, 33);
-        map.remove(1);
+        map.add(4, 44);
+        map.add(5, 55);
+        map.add(6, 66);
+        map.remove(4);
         System.out.println("get " + map.get(2));
-        System.out.println(map);
+//        System.out.println(map);
     }
 }
