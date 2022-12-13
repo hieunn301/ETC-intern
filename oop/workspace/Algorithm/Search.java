@@ -2,7 +2,8 @@ package oop.workspace.Algorithm;
 
 import java.util.Arrays;
 
-class LinearSearch<T>{
+class
+LinearSearch{
     // Danh sách hoặc mảng được duyệt tuần tự và mọi phần tử đều được kiểm tra. Time O(N)
     static int[] arr = { 5, 15, 6, 9, 4 };
     static int linearSearch(int arr[], int size, int key) {
@@ -54,8 +55,8 @@ class BinarySearch {
 }
 
 class TernarySearch{
-    //kỹ thuật trong khoa học máy tính dùng để tìm kiếm giá trị lớn nhất (maximum) hay nhỏ nhất (minimum) của một unimodal function
-    //Time O (log [n]) trong đó cơ số của log = 3
+//Kỹ thuật trong khoa học máy tính dùng để tìm kiếm giá trị lớn nhất (maximum) hay nhỏ nhất (minimum) của một unimodal function
+//Time O (log [n]) trong đó cơ số của log = 3
     static int ternarySearch(int arr[], int left, int right, int key) {
         if (left <= right) {
             int mid1 = left + (right - left) / 3;
@@ -124,8 +125,7 @@ class JumpSearch {
 }
 
 class InterpolationSearch {
-//Thuật toán này hoạt động theo cách chúng ta tìm kiếm một từ trong từ điển.
-// Thuật toán tìm kiếm nội suy cải thiện thuật toán tìm kiếm nhị phân.
+//Tìm kiếm một từ trong từ điển. Thuật toán tìm kiếm nội suy cải thiện thuật toán tìm kiếm nhị phân.
 // Công thức tìm giá trị là: K = data-low/high-low.
     public static int interpolationSearch(int arr[], int left, int right, int x) {
         int position;
@@ -152,8 +152,8 @@ class InterpolationSearch {
             System.out.println("Element not found.");
     }
 }
-class exponentialSearch{
-    //bắt đầu với kích thước mảng con 1, so sánh phần tử cuối cùng của nó với x, sau đó thử kích thước 2, rồi 4. Time O(Log n)
+class ExponentialSearch{
+//Bắt đầu với kích thước mảng con 1, so sánh phần tử cuối cùng của nó với x, sau đó thử kích thước 2, rồi 4. Time O(Log n)
     static int exponentialSearch(int arr[], int n, int x) {
         if (arr[0] == x)
             return 0;
@@ -166,8 +166,7 @@ class exponentialSearch{
     public static void main(String args[]) {
         int arr[] = {2, 3, 4, 10, 40};
         int x = 10;
-        int result = exponentialSearch(arr,
-                arr.length, x);
+        int result = exponentialSearch(arr, arr.length, x);
         System.out.println((result < 0) ? "Element is not present in array" : "Element is present at index " + result);
     }
 }
