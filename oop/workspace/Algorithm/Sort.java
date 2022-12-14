@@ -1,196 +1,227 @@
 package oop.workspace.Algorithm;
 
 class SelectionSort {
-    static void sort(int array[]) {
-        for (int i = 0; i < array.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < array.length; j++)
-                if (array[j] < array[min])
-                    min = j;
-            int temp = array[min];
-            array[min] = array[i];
-            array[i] = temp;
+    static void selectionSort(int[] array) {
+        for (int step = 0; step < array.length - 1; step++) {
+            int min = step;
+            for (int i = step + 1; i < array.length; i++)
+                if (array[i] < array[min])
+                    min = i;
+            int temp = array[step];
+            array[step] = array[min];
+            array[min] = temp;
         }
     }
 
-    static void printArray(int array[]) {
+    static void printArray(int[] array) {
         for (int i = 0; i < array.length; ++i)
             System.out.print(array[i] + " ");
-        System.out.println();
     }
 
-    public static void main(String args[]) {
-        int array[] = {64,25,12,22,11};
+    public static void main(String[] args) {
+        int[] array = { 29, 72, 98, 13, 87, 66, 52 };
         System.out.println("Sorted array");
-        sort(array);
+        selectionSort(array);
         printArray(array);
     }
 }
 
 class BubbleSort {
-    void bubbleSort(int arr[]) {
-        int n = arr.length;
+    static void bubbleSort(int[] array) {
+        int n = array.length;
         for (int i = 0; i < n - 1; i++)
             for (int j = 0; j < n - 1 - i; j++)
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
     }
 
-    void printArray(int arr[]) {
-        int n = arr.length;
+    static void printArray(int[] array) {
+        int n = array.length;
         for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
+            System.out.print(array[i] + " ");
     }
 
-    public static void main(String args[]) {
-        BubbleSort ob = new BubbleSort();
-        int arr[] = { 5, 1, 4, 2, 8 };
-        ob.bubbleSort(arr);
+    public static void main(String[] args) {
+        int[] array = { 29, 72, 98, 13, 87, 66, 52 };
         System.out.println("Sorted array");
-        ob.printArray(arr);
+        bubbleSort(array);
+        printArray(array);
     }
 }
 
 class InsertionSort {
-    void sort(int arr[]) {
-        int n = arr.length;
+    static void insertionSort(int[] array) {
+        int n = array.length;
         for (int i = 1; i < n; ++i) {
-            int key = arr[i];
+            int key = array[i];
             int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
                 j = j - 1;
             }
-            arr[j + 1] = key;
+            array[j + 1] = key;
         }
     }
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
+    static void printArray(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n; ++i) {
+            System.out.print(array[i] + " ");
+        }
     }
-    public static void main(String args[]) {
-        int arr[] = { 12, 11, 13, 5, 6 };
-
-        InsertionSort object = new InsertionSort();
-        object.sort(arr);
-
-        printArray(arr);
+    public static void main(String[] args) {
+        int[] array = { 12, 11, 13, 5, 6 };
+        System.out.println("Insertion Sort ");
+        insertionSort(array);
+        printArray(array);
     }
 }
 
 class MergeSort {
-    void merge(int arr[], int left, int middle, int right) {
+    static void merge(int array[], int left, int middle, int right) {
         int n1 = middle - left + 1;
         int n2 = right - middle;
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int Left[] = new int[n1];
+        int Right[] = new int[n2];
         for (int i = 0; i < n1; ++i)
-            L[i] = arr[left + i];
+            Left[i] = array[left + i];
 
         for (int j = 0; j < n2; ++j)
-            R[j] = arr[middle + 1 + j];
+            Right[j] = array[middle + 1 + j];
         int i = 0, j = 0;
         int k = left;
 
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
+            if (Left[i] <= Right[j]) {
+                array[k] = Left[i];
                 i++;
             } else {
-                arr[k] = R[j];
+                array[k] = Right[j];
                 j++;
             }
             k++;
         }
 
         while (i < n1) {
-            arr[k] = L[i];
+            array[k] = Left[i];
             i++;
             k++;
         }
 
         while (j < n2) {
-            arr[k] = R[j];
+            array[k] = Right[j];
             j++;
             k++;
         }
     }
 
-    void sort(int arr[], int l, int r) {
-        if (l < r) {
-            int m = l + (r - l) / 2;
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-            merge(arr, l, m, r);
+    static void mergeSort(int array[], int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergeSort(array, left, mid);
+            mergeSort(array, mid + 1, right);
+            merge(array, left, mid, right);
         }
     }
 
-    static void printArray(int arr[]) {
-        int n = arr.length;
+    static void printArray(int[] array) {
+        int n = array.length;
         for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
+            System.out.print(array[i] + " ");
     }
 
-    public static void main(String args[]) {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
+    public static void main(String[] args) {
+        int[] array = { 12, 11, 13, 5, 6, 7 };
         System.out.println("Given Array");
-        printArray(arr);
-        MergeSort object = new MergeSort();
-        object.sort(arr, 0, arr.length - 1);
+        printArray(array);
+        mergeSort(array, 0, array.length - 1);
         System.out.println("Sorted array");
-        printArray(arr);
+        printArray(array);
     }
 }
 
 class QuickSort {
-    static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
-    static int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
+    static int partition(int[] array, int low, int high) {
+        int pivot = array[high];
         int i = (low - 1);
 
         for (int j = low; j <= high - 1; j++) {
-            if (arr[j] < pivot) {
+            if (array[j] < pivot) {
                 i++;
-                swap(arr, i, j);
+                swap(array, i, j);
             }
         }
-        swap(arr, i + 1, high);
+        swap(array, i + 1, high);
         return (i + 1);
     }
 
-    static void quickSort(int[] arr, int low, int high) {
+    static void quickSort(int[] array, int low, int high) {
         if (low < high) {
-            int pi = partition(arr, low, high);
-            quickSort(arr, low, pi - 1);
-            quickSort(arr, pi + 1, high);
+            int pi = partition(array, low, high);
+            quickSort(array, low, pi - 1);
+            quickSort(array, pi + 1, high);
         }
     }
 
-    static void printArray(int[] arr, int size) {
+    static void printArray(int[] array, int size) {
         for (int i = 0; i < size; i++)
-            System.out.print(arr[i] + " ");
-
-        System.out.println();
+            System.out.print(array[i] + " ");
     }
 
     public static void main(String[] args) {
-        int[] arr = { 10, 7, 8, 9, 1, 5 };
-        int n = arr.length;
-
-        quickSort(arr, 0, n - 1);
+        int[] array = { 10, 7, 8, 9, 1, 5 };
+        quickSort(array, 0, array.length - 1);
         System.out.println("Sorted array: ");
-        printArray(arr, n);
+        printArray(array, array.length);
+    }
+}
+
+class HeapSort {
+    public void sort(int arr[]) {
+        int N = arr.length;
+        for (int i = N / 2 - 1; i >= 0; i--)
+            heapify(arr, N, i);
+        for (int i = N - 1; i > 0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+            heapify(arr, i, 0);
+        }
+    }
+    void heapify(int array[], int N, int i) {
+        int largest = i;
+        int left = 2 * i + 1; // left = 2*i + 1
+        int right = 2 * i + 2; // right = 2*i + 2
+        if (left < N && array[left] > array[largest])
+            largest = left;
+        if (right < N && array[right] > array[largest])
+            largest = right;
+        if (largest != i) {
+            int swap = array[i];
+            array[i] = array[largest];
+            array[largest] = swap;
+            heapify(array, N, largest);
+        }
+    }
+    static void printArray(int array[]) {
+        int N = array.length;
+        for (int i = 0; i < N; ++i)
+            System.out.print(array[i] + " ");
+    }
+    public static void main(String args[]) {
+        int array[] = { 12, 11, 13, 5, 6, 7 };
+        int N = array.length;
+        HeapSort object = new HeapSort();
+        object.sort(array);
+        System.out.println("Sorted array is");
+        printArray(array);
     }
 }
