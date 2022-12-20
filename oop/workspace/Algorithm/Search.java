@@ -16,8 +16,8 @@ class LinearSearch{
     }
 
     public static void main(String[] args) {
-        int[] array = { 5, 15, 6, 9, 4 };
-        int key = 6;
+        int[] array = { 10, 50, 30, 70, 80, 60, 20, 90 };
+        int key = 20;
         int index = linearSearch(array, array.length, key);
         if (index != -1)
             System.out.println("The element " + key + " is found at " + index + " index of the given array.");
@@ -31,14 +31,12 @@ class BinarySearch {
     public static int binarySearch(int[] array, int left, int right, int key) {
         if (right >= left) {
             int middle = left + (right - left) / 2;
-            if (array[middle] == key) {
+            if (array[middle] == key)
                 return middle;
-            }
-            if (array[middle] > key)
+            else if (array[middle] > key)
                 return binarySearch(array, left, middle - 1, key);
-            if (array[middle] < key) {
+            else if (array[middle] < key)
                 return binarySearch(array, middle + 1, right, key);
-            }
         }
         return -1;
     }
@@ -59,22 +57,22 @@ class TernarySearch{
 //Time O (log [n]) trong đó cơ số của log = 3
     static int ternarySearch(int[] array, int left, int right, int key) {
         if (left <= right) {
-            int mid1 = left + (right - left) / 3;
-            int mid2 = right - (right - left) / 3;
-            if (array[mid1] == key) {
-                return mid1;
+            int middle1 = left + (right - left) / 3;
+            int middle2 = right - (right - left) / 3;
+            if (array[middle1] == key) {
+                return middle1;
             }
-            if (array[mid2] == key) {
-                return mid2;
+            if (array[middle2] == key) {
+                return middle2;
             }
-            if (key < array[mid1]) {
-                return ternarySearch(array, left, mid1 - 1, key);
+            if (array[middle1] > key) {
+                return ternarySearch(array, left, middle1 - 1, key);
             }
-            else if (key > array[mid2]) {
-                return ternarySearch(array, mid2 + 1, right, key);
+            else if (array[middle2] < key) {
+                return ternarySearch(array, middle2 + 1, right, key);
             }
             else {
-                return ternarySearch(array, mid1 + 1, mid2 - 1, key);
+                return ternarySearch(array, middle1 + 1, middle2 - 1, key);
             }
         }
         return -1;
@@ -82,15 +80,15 @@ class TernarySearch{
 
     public static void main(String[] args) {
         int left, right, index, key;
-        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int[] array = {2, 8, 9, 11 , 13, 14, 18};
         left = 0;
-        right = 9;
+        right = 6;
 
-        key = 5;
+        key = 11;
         index = ternarySearch(array, left, right, key);
         System.out.println("Index of " + key + " is " + index);
 
-        key = 9;
+        key = 14;
         index = ternarySearch(array, left, right, key);
         System.out.println("Index of " + key + " is " + index);
     }
@@ -98,22 +96,22 @@ class TernarySearch{
 
 class JumpSearch {
     //Phần tử tìm kiếm sẽ nằm trong khoảng của nhảy mà chứa phần từ lớn hơn giá trị tìm kiếm. Time 0(sqrt(n))
-    public static int jumpSearch(int[] array, int x) {
+    public static int jumpSearch(int[] array, int key) {
         int n = array.length;
         int step = (int)Math.floor(Math.sqrt(n));
         int prev = 0;
-        while (array[Math.min(step, n) - 1] < x) {
+        while (array[Math.min(step, n) - 1] < key) {
             prev = step;
             step += (int)Math.floor(Math.sqrt(n));
             if (prev >= n)
                 return -1;
         }
-        while (array[prev] < x) {
+        while (array[prev] < key) {
             prev++;
             if (prev == Math.min(step, n))
                 return -1;
         }
-        if (array[prev] == x)
+        if (array[prev] == key)
             return prev;
 
         return -1;
@@ -121,9 +119,12 @@ class JumpSearch {
 
     public static void main(String[] args) {
         int[] array = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610};
-        int x = 13;
-        int index = jumpSearch(array, x);
-        System.out.println("Number " + x + " is at index " + index);
+        int key = 89;
+        int index = jumpSearch(array, key);
+        if (index != -1)
+            System.out.println("Number " + key + " is at index " + index);
+        else
+            System.out.println("Element not found.");
     }
 }
 
@@ -144,8 +145,8 @@ class InterpolationSearch {
     }
 
     public static void main(String[] args) {
-        int[] array = { 10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47 };
-        int key = 18;
+        int[] array = { 10, 12, 13, 16, 18, 19, 20, 21, 22};
+        int key = 11;
         int index = interpolationSearch(array, 0, array.length - 1, key);
         if (index != -1)
             System.out.println("Element found at index " + index);
@@ -154,21 +155,21 @@ class InterpolationSearch {
     }
 }
 class ExponentialSearch{
-//Bắt đầu với kích thước mảng con 1, so sánh phần tử cuối cùng của nó với x, sau đó thử kích thước 2, rồi 4. Time O(Log n)
-    static int exponentialSearch(int[] arr, int n, int x) {
-        if (arr[0] == x)
+//Time O(Log n)
+    static int exponentialSearch(int[] array, int length, int key) {
+        if (array[0] == key)
             return 0;
         int i = 1;
-        while (i < n && arr[i] <= x)
-            i = i*2;
-        return Arrays.binarySearch(arr, i/2, Math.min(i, n-1), x);
+        while (i < length && array[i] <= key)
+            i = i * 2;
+        return Arrays.binarySearch(array, i/2, Math.min(i, length-1), key);
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 4, 10, 40};
-        int x = 10;
-        int result = exponentialSearch(arr, arr.length, x);
-        System.out.println((result < 0) ? "Element is not present in array" : "Element is present at index " + result);
+        int[] array = {2, 3, 4, 10, 40};
+        int key = 3;
+        int index = exponentialSearch(array, array.length, key);
+        System.out.println((index < 0) ? "Element is not present in array" : "Element is present at index " + index);
     }
 }
 
@@ -177,47 +178,46 @@ class Fibonacci {
         return (x <= y) ? x : y;
     }
 
-    public static int fibMonaccianSearch(int[] array, int x, int n) {
-        int fibMMm2 = 0;
-        int fibMMm1 = 1;
-        int fibM = fibMMm2 + fibMMm1;
-        while (fibM < n) {
-            fibMMm2 = fibMMm1;
-            fibMMm1 = fibM;
-            fibM = fibMMm2 + fibMMm1;
+    public static int fibSearch(int[] array, int key, int length) {
+        int fib1 = 0;
+        int fib2 = 1;
+        int fib = fib1 + fib2;
+        while (fib < length) {
+            fib1 = fib2;
+            fib2 = fib;
+            fib = fib1 + fib2;
         }
         int offset = -1;
-        while (fibM > 1) {
-            int i = min(offset + fibMMm2, n - 1);
-            if (array[i] < x) {
-                fibM = fibMMm1;
-                fibMMm1 = fibMMm2;
-                fibMMm2 = fibM - fibMMm1;
+        while (fib > 1) {
+            int i = min(offset + fib1, length - 1);
+            if (array[i] < key) {
+                fib = fib2;
+                fib2 = fib1;
+                fib1 = fib - fib2;
                 offset = i;
             }
-            else if (array[i] > x) {
-                fibM = fibMMm2;
-                fibMMm1 = fibMMm1 - fibMMm2;
-                fibMMm2 = fibM - fibMMm1;
+            else if (array[i] > key) {
+                fib = fib1;
+                fib2 = fib2 - fib1;
+                fib1 = fib - fib2;
             }
             else
                 return i;
         }
-        if (fibMMm1 == 1 && array[n-1] == x)
-            return n-1;
+        if (fib2 == 1 && array[length-1] == key)
+            return length - 1;
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] array = { 10, 22, 35, 40, 45, 50,
-                80, 82, 85, 90, 100,235};
-        int n = 12;
-        int x = 235;
-        int index = fibMonaccianSearch(array, x, n);
+        int[] array = { 10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100,235};
+        int length = 12;
+        int key = 10;
+        int index = fibSearch(array, key, length);
         if(index >= 0)
-            System.out.print("Found at index: " + index);
+            System.out.println("Found at index: " + index);
         else
-            System.out.print(x+" isn't present in the array");
+            System.out.println(key + " isn't present in the array");
     }
 }
 
