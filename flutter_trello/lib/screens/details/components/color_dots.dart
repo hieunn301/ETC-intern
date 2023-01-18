@@ -1,6 +1,5 @@
-/* import 'package:flutter/material.dart';
-import 'package:flutter_appTrello/components/rounded_icon_btn.dart';
-import 'package:flutter_appTrello/models/Product.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_trello/components/rounded_icon_btn.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -8,10 +7,10 @@ import '../../../size_config.dart';
 class ColorDots extends StatelessWidget {
   const ColorDots({
     Key? key,
-    required this.product,
+    // required this.project,
   }) : super(key: key);
 
-  final Product product;
+  // final Project project;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +20,13 @@ class ColorDots extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
-          ...List.generate(
-            product.colors.length,
+          /* ...List.generate(
+            project.colors.length,
             (index) => ColorDot(
-              color: product.colors[index],
+              color: project.colors[index],
               isSelected: index == selectedColor,
             ),
-          ),
+          ), */
           Spacer(),
           RoundedIconBtn(
             icon: Icons.remove,
@@ -77,4 +76,3 @@ class ColorDot extends StatelessWidget {
     );
   }
 }
- */

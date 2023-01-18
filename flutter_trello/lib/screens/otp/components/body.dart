@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_trello/constants.dart';
 import 'package:flutter_trello/size_config.dart';
 
-
 import 'otp_form.dart';
 
 class Body extends StatelessWidget {
@@ -21,14 +20,12 @@ class Body extends StatelessWidget {
                 "OTP Verification",
                 style: headingStyle,
               ),
-              Text("We sent your code to +1 898 860 ***"),
+              Text("We sent your code to +89 981 682 2**"),
               buildTimer(),
               OtpForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
               GestureDetector(
-                onTap: () {
-                  // OTP code resend
-                },
+                onTap: () {},
                 child: Text(
                   "Resend OTP Code",
                   style: TextStyle(decoration: TextDecoration.underline),

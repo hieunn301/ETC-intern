@@ -13,11 +13,21 @@ class ListProjects extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(
-            title: "List Project",
-            press: () {},
+          padding: const EdgeInsets.all(8.0),
+          child: Text.rich(
+            TextSpan(
+              style: TextStyle(color: Colors.black),
+              children: [
+                TextSpan(
+                  text: "Work space",
+                  style: TextStyle(
+                    fontSize: getProportionateScreenWidth(20),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
@@ -26,14 +36,14 @@ class ListProjects extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/space1.jpg",
-                category: "a",
+                image: "assets/images/Image Banner 2.png",
+                category: "project 1",
                 numOfBoards: 2,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/space2.jpg",
-                category: "b",
+                image: "assets/images/Image Banner 2.png",
+                category: "project 2",
                 numOfBoards: 4,
                 press: () {},
               ),

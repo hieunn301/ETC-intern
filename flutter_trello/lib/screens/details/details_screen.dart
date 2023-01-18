@@ -1,6 +1,5 @@
-/* import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-import '../../models/Product.dart';
 import 'components/body.dart';
 import 'components/custom_app_bar.dart';
 
@@ -9,22 +8,25 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailsArguments agrs =
-        ModalRoute.of(context)!.settings.arguments as ProductDetailsArguments;
+    final ProjectDetailsArguments agrs =
+        ModalRoute.of(context)!.settings.arguments as ProjectDetailsArguments;
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
-      appBar: PreferredSize(
+      /* appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-        child: CustomAppBar(rating: agrs.product.rating),
-      ),
-      body: Body(product: agrs.product),
+        child: CustomAppBar(
+          rating: agrs.project.rating,
+          ),
+      ), */
+      // body: Body(project: agrs.project),
     );
   }
 }
 
-class ProductDetailsArguments {
-  final Product product;
+class ProjectDetailsArguments {
+  // final Project project;
 
-  ProductDetailsArguments({required this.product});
+  /* ProjectDetailsArguments({
+    required this.project,
+  }); */
 }
- */

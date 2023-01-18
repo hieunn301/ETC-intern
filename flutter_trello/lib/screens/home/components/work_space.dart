@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 
@@ -21,7 +21,7 @@ class WorkSpace extends StatelessWidget {
               text: "Work space",
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(20),
-                color: Colors.black54,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -31,3 +31,4 @@ class WorkSpace extends StatelessWidget {
     );
   }
 }
+ */

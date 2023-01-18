@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_trello/components/no_account_text.dart';
 import 'package:flutter_trello/components/socal_card.dart';
-import 'package:flutter_trello/constants.dart';
 import '../../../size_config.dart';
 import 'sign_form.dart';
 
@@ -31,7 +30,7 @@ class Body extends StatelessWidget {
                       child: Text(
                         "Trello",
                         style: TextStyle(
-                          color: kPrimaryColor,
+                          color: Colors.black,
                           fontSize: getProportionateScreenWidth(28),
                           fontWeight: FontWeight.bold,
                         ),
