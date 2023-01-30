@@ -19,7 +19,6 @@ class SearchField extends StatelessWidget {
       child: ListTile(
         title: TextFormField(
           onChanged: (value) => print(value),
-          // controller: widget.taskControllerForSubtitle,
           decoration: InputDecoration(
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
@@ -27,12 +26,6 @@ class SearchField extends StatelessWidget {
             prefixIcon: Icon(Icons.search),
             border: OutlineInputBorder(),
           ),
-          /* onFieldSubmitted: (value) {
-            subtitle = value;
-          },
-          onChanged: (value) {
-            subtitle = value;
-          }, */
         ),
       ),
     );

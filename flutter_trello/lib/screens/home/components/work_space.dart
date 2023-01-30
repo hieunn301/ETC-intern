@@ -33,9 +33,9 @@ Padding WorkSpace(List<Task> tasks, TextTheme textTheme, BaseWidget base) {
     child: Column(
       children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(55, 0, 0, 0),
+          margin: const EdgeInsets.fromLTRB(32, 0, 0, 0),
           width: double.infinity,
-          height: 100,
+          height: 80,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -74,10 +74,10 @@ Padding WorkSpace(List<Task> tasks, TextTheme textTheme, BaseWidget base) {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: EdgeInsets.only(top: 10, right: 44.5),
           child: Divider(
             thickness: 2,
-            indent: 100,
+            indent: 50,
           ),
         ),
         SizedBox(
@@ -89,7 +89,6 @@ Padding WorkSpace(List<Task> tasks, TextTheme textTheme, BaseWidget base) {
                   itemCount: tasks.length,
                   itemBuilder: (BuildContext context, int index) {
                     var task = tasks[index];
-
                     return Dismissible(
                       direction: DismissDirection.horizontal,
                       background: Row(
@@ -109,7 +108,7 @@ Padding WorkSpace(List<Task> tasks, TextTheme textTheme, BaseWidget base) {
                         ],
                       ),
                       onDismissed: (direction) {
-                        base.dataStore.dalateTask(task: task);
+                        base.dataStore.deleteTask(task: task);
                       },
                       key: Key(task.id),
                       child: TaskWidget(

@@ -113,19 +113,19 @@ class FAB extends StatelessWidget {
         Navigator.of(context).push(
           CupertinoPageRoute(
             builder: (context) => TaskView(
+              task: null,
               taskControllerForSubtitle: null,
               taskControllerForTitle: null,
-              task: null,
             ),
           ),
         );
       },
       child: Material(
         borderRadius: BorderRadius.circular(15),
-        elevation: 10,
+        elevation: 5,
         child: Container(
-          width: 50,
-          height: 50,
+          width: 55,
+          height: 55,
           decoration: BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(15),

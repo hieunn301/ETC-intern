@@ -11,6 +11,7 @@ class TaskWidget extends StatefulWidget {
   final Task task;
 
   @override
+  // ignore: library_private_types_in_public_api
   _TaskWidgetState createState() => _TaskWidgetState();
 }
 
@@ -47,6 +48,7 @@ class _TaskWidgetState extends State<TaskWidget> {
         );
       },
 
+      // Main Card
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 600),
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -63,6 +65,7 @@ class _TaskWidgetState extends State<TaskWidget> {
             ]),
         child: ListTile(
 
+            // Check icon
             leading: GestureDetector(
               onTap: () {
                 widget.task.isCompleted = !widget.task.isCompleted;
@@ -82,6 +85,7 @@ class _TaskWidgetState extends State<TaskWidget> {
               ),
             ),
 
+            // title of Task
             title: Padding(
               padding: const EdgeInsets.only(bottom: 5, top: 3),
               child: Text(
@@ -96,6 +100,7 @@ class _TaskWidgetState extends State<TaskWidget> {
               ),
             ),
 
+            // Description of task
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -112,6 +117,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   ),
                 ),
 
+                // Date & Time of Task
                 Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
