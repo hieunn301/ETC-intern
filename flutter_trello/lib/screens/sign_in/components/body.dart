@@ -44,9 +44,9 @@ class Body extends StatelessWidget {
                   "Sign in with your email and password",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.07),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.07),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

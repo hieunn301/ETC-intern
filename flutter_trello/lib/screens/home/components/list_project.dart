@@ -12,7 +12,7 @@ class ListProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
+        /*  Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text.rich(
             TextSpan(
@@ -29,7 +29,7 @@ class ListProjects extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ), */
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -37,13 +37,13 @@ class ListProjects extends StatelessWidget {
             children: [
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
-                category: "project 1",
+                category: "task 1",
                 numOfBoards: 2,
                 press: () {},
               ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
-                category: "project 2",
+                category: "task 2",
                 numOfBoards: 4,
                 press: () {},
               ),

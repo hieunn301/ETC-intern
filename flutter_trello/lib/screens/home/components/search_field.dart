@@ -16,15 +16,23 @@ class SearchField extends StatelessWidget {
         color: kSecondaryColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(15),
       ),
-      child: TextFormField(
-        onChanged: (value) => print(value),
-        decoration: InputDecoration(
-          // border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          hintText: "Search",
-          prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(),
+      child: ListTile(
+        title: TextFormField(
+          onChanged: (value) => print(value),
+          // controller: widget.taskControllerForSubtitle,
+          decoration: InputDecoration(
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            hintText: "Search",
+            prefixIcon: Icon(Icons.search),
+            border: OutlineInputBorder(),
+          ),
+          /* onFieldSubmitted: (value) {
+            subtitle = value;
+          },
+          onChanged: (value) {
+            subtitle = value;
+          }, */
         ),
       ),
     );

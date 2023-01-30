@@ -8,7 +8,12 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Forgot Password"),
+        title: Text(
+          "Forgot Password",
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
       ),
       body: Body(),
     );
