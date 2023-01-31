@@ -230,8 +230,8 @@ class _TaskViewState extends State<TaskView> {
                     .dataStore
                     .addTask(task: task)
                     .then((value) {
-                  final snackBar = SnackBar(content: Text('Tạo Thành Công'));
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  /* final snackBar = SnackBar(content: Text('Tạo Thành Công'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar); */
                   Navigator.of(context).pop();
                 });
               } else {

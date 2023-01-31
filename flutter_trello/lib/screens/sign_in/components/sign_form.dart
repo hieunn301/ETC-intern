@@ -77,8 +77,8 @@ class _SignFormState extends State<SignForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 KeyboardUtil.hideKeyboard(context);
-                final snackBar = SnackBar(content: Text('Tạo Thành Công'));
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                /* final snackBar = SnackBar(content: Text('Tạo Thành Công'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar); */
                 Navigator.pushNamed(context, HomeScreen.routeName);
               }
             },
