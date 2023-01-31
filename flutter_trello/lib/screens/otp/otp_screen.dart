@@ -10,7 +10,10 @@ class OtpScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("OTP Verification"),
+        title: Text(
+          "OTP Verification",
+          style: TextStyle(fontSize: 24),
+        ),
       ),
       body: Body(),
     );

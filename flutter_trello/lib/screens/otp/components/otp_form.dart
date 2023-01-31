@@ -53,7 +53,7 @@ class _OtpFormState extends State<OtpForm> {
                 width: getProportionateScreenWidth(60),
                 child: TextFormField(
                   autofocus: true,
-                  obscureText: true,
+                  // obscureText: true,
                   style: TextStyle(fontSize: 24),
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
@@ -67,7 +67,7 @@ class _OtpFormState extends State<OtpForm> {
                 width: getProportionateScreenWidth(60),
                 child: TextFormField(
                   focusNode: pin2FocusNode,
-                  obscureText: true,
+                  // obscureText: true,
                   style: TextStyle(fontSize: 24),
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
@@ -79,7 +79,7 @@ class _OtpFormState extends State<OtpForm> {
                 width: getProportionateScreenWidth(60),
                 child: TextFormField(
                   focusNode: pin3FocusNode,
-                  obscureText: true,
+                  // obscureText: true,
                   style: TextStyle(fontSize: 24),
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
@@ -91,7 +91,7 @@ class _OtpFormState extends State<OtpForm> {
                 width: getProportionateScreenWidth(60),
                 child: TextFormField(
                   focusNode: pin4FocusNode,
-                  obscureText: true,
+                  // obscureText: true,
                   style: TextStyle(fontSize: 24),
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,

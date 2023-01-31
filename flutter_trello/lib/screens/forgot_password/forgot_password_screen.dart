@@ -11,7 +11,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         title: Text(
           "Forgot Password",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
           ),
         ),
       ),

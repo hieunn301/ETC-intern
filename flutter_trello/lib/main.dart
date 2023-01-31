@@ -1,32 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trello/components/task.dart';
 import 'package:flutter_trello/constants.dart';
 import 'package:flutter_trello/data/hive_data_store.dart';
 import 'package:flutter_trello/routes.dart';
-import 'package:flutter_trello/screens/home/home_screen.dart';
 import 'package:flutter_trello/screens/splash/splash_screen.dart';
 import 'package:flutter_trello/screens/tasks/task_view.dart';
-import 'package:flutter_trello/theme.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-/* void main() {
-  runApp(MyApp());
-} */
 Future<void> main() async {
   await Hive.initFlutter();
-
   Hive.registerAdapter<Task>(TaskAdapter());
 
-  /// Open box
+  // Open box
   var box = await Hive.openBox<Task>("tasksBox");
-
   box.values.forEach((task) {
     if (task.createdAtTime.day != DateTime.now().day) {
       task.delete();
     } else {}
   });
-
+  /* WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); */
   runApp(BaseWidget(child: MyApp()));
 }
 

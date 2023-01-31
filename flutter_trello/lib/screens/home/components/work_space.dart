@@ -101,7 +101,7 @@ Padding WorkSpace(List<Task> tasks, TextTheme textTheme, BaseWidget base) {
                           SizedBox(
                             width: 8,
                           ),
-                          Text(MyString.deletedTask,
+                          Text(MyString.doneTask,
                               style: TextStyle(
                                 color: Colors.grey,
                               ))

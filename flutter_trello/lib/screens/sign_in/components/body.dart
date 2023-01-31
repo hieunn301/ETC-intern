@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
                 ),
 
                 // SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Text(
+                const Text(
                   "Sign in with your email and password",
                   textAlign: TextAlign.center,
                 ),

@@ -11,7 +11,7 @@ class SignUpScreen extends StatelessWidget {
         title: Text(
           "Sign Up",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
           ),
         ),
       ),

@@ -1,6 +1,6 @@
 class MyString {
   static const String mainTitle = "My Tasks";
-  static const String deletedTask = "This task was deleted";
+  static const String doneTask = "This task done";
   static const String doneAllTask = "You Have Done All Tasks!👌";
   static const String addNewTask = "Add New ";
   static const String updateCurrentTask = "Update ";

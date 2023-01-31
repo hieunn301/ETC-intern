@@ -36,6 +36,7 @@ class ProfilePic extends StatelessWidget {
                   backgroundColor: Color(0xFFF5F6F9),
                 ),
                 onPressed: () async {
+                  //choose file
                   var picked = await FilePicker.platform.pickFiles();
 
                   if (picked != null) {

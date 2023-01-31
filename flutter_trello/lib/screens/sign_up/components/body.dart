@@ -43,9 +43,9 @@ class Body extends StatelessWidget {
                   "Sign up for your account",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.06),
                 SignUpForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.06),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: getProportionateScreenHeight(20)),
+                SizedBox(height: 20),
                 Text(
                   'By signing up, I accept Cloud term of Service \nand acknowledge the Privacy Police',
                   textAlign: TextAlign.center,

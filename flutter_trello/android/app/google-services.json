@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "886939035058",
+    "project_id": "fluttertrello",
+    "storage_bucket": "fluttertrello.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886939035058:android:37e6174221a9c06cb8f0ab",
+        "android_client_info": {
+          "package_name": "stevegregor1outlook.flutter_trello"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886939035058-q81e4b08eg1ofkvahcilj9bpivhmnlhr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRTrrIN1CMoyedOg1N3nE-QBVPcj1Vkzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886939035058-q81e4b08eg1ofkvahcilj9bpivhmnlhr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
